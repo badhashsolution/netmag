@@ -1,0 +1,1 @@
+# from http://www.creativebloq.com/netmag/get-started-django-7132932
