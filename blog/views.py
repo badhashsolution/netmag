@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 
+# WGG 2013-12-24 05:51:20 - add in items to display views
 def index(request):
     # get the blog posts that are published
     posts = Post.objects.filter(published = True)

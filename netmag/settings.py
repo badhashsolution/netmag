@@ -84,3 +84,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 SITE_ID=1 # WGG 12/24/2013 4:50 AM - added in an attempt to resolve error: ImproperlyConfigured at /admin/You're using the Django "sites framework" without having set the SITE_ID setting. Create a site in your database and set the SITE_ID setting to fix this error.
+
+# WGG 2013-12-24 05:53:38 - give Django a way to find your templates
+TEMPLATE_DIRS = (
+    'C:/Users/Wes/PycharmProjects/netmag/netmag/templates',
+)
