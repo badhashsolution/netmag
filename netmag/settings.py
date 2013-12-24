@@ -89,3 +89,8 @@ SITE_ID=1 # WGG 12/24/2013 4:50 AM - added in an attempt to resolve error: Impro
 TEMPLATE_DIRS = (
     'C:/Users/Wes/PycharmProjects/netmag/netmag/templates',
 )
+
+# WGG 2013-12-24 11:06:48 - link to static files path for style.css
+STATICFILES_DIRS = (
+    'C:/Users/Wes/PycharmProjects/netmag/netmag/static/'
+)
