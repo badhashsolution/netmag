@@ -9,4 +9,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    # WGG 2013-12-24 05:41:45 - creating the front end blog display
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$','blog.views.index'),
+    url(r'^(?P<slug>[\w\-]+)/$', 'blog.views.post'),
 )
