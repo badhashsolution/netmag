@@ -30,15 +30,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.admindocs',
     'blog',
 )
 
@@ -62,7 +60,7 @@ WSGI_APPLICATION = 'netmag.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'netmag.db',
+        'NAME': os.path.join(BASE_DIR, 'netmag.db'),
     }
 }
 
@@ -84,3 +82,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_ID=1 # WGG 12/24/2013 4:50 AM - added in an attempt to resolve error: ImproperlyConfigured at /admin/You're using the Django "sites framework" without having set the SITE_ID setting. Create a site in your database and set the SITE_ID setting to fix this error.
