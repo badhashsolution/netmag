@@ -1,4 +1,18 @@
 from django.contrib import admin
 from blog.models import Post # WGG 12/24/2013 5:00 AM - connecting blog app
 
-admin.site.register(Post) # WGG 12/24/2013 5:00 AM - connecting blog app in admin
+class PostAdmin(admin.ModelAdmin): # WGG 2013-12-24 05:20:00 - tweaking the blog admin
+    # fields display on change list
+    list_display = ['title','description']
+    # fields to filter the change list with
+    list_filter = ['published', 'created']
+    # fields to search in change list
+    search_fields = ['title', 'description', 'content']
+    # enable the date drill down on change list
+    date_hierarchy = 'created'
+    # enable the save button on top on change form
+    save_on_top = True
+    # prepopulate the slug from the title - big timesaver!
+    prepopulated_fields = {"slug":("title",)}
+
+admin.site.register(Post, PostAdmin) # WGG 12/24/2013 5:00 AM - connecting blog app in admin
